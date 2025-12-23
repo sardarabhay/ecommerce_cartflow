@@ -3,6 +3,7 @@ import { render, screen, within } from '@testing-library/react';
 import { MemoryRouter } from 'react-router';
 import axios from 'axios';
 import { HomePage } from './HomePage';
+import userEvent from '@testing-library/user-event';
 
 vi.mock('axios');
 
@@ -65,4 +66,41 @@ describe('HomePage Component', () => {
         ).toBeInTheDocument();
 
     });
+
+    it('',async()=>{
+        const user= userEvent.setup();
+        render(
+            <MemoryRouter>
+                <HomePage cart={[]} loadCart={loadCart} />
+            </MemoryRouter>
+        );
+
+        const productContainers = await screen.findAllByTestId('product-container');
+        const firstAddToCartButton=within(productContainers[0]).getByTestId('add-to-cart-button');
+        const firstQuantitySelect=within(productContainers[0]).getByTestId('product-quantity-container');
+        await user.selectOptions(firstQuantitySelect,'2');
+        await user.click(firstAddToCartButton);
+        const secondAddToCartButton=within(productContainers[1]).getByTestId('add-to-cart-button');
+         const secondQuantitySelect=within(productContainers[1]).getByTestId('product-quantity-container');
+        await user.selectOptions(secondQuantitySelect,'3');
+        await user.click(secondAddToCartButton);
+        expect(axios.post).toHaveBeenNthCalledWith(1,
+            '/api/cart-items',
+            {
+                productId: 'e43638ce-6aa0-4b85-b27f-e1d07eb678c6',
+                quantity: 2
+            }
+        );
+        expect(axios.post).toHaveBeenNthCalledWith(2,
+            '/api/cart-items',
+            {
+                productId: '15b6fc6f-327a-4ec4-896f-486349e85a3d',
+                quantity: 3
+            }
+        );
+        expect(loadCart).toHaveBeenCalledTimes(2);
+
+    });
+
+
 })
