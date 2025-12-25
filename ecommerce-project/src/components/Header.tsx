@@ -9,8 +9,16 @@ import { useState } from 'react';
 import { useNavigate, useSearchParams } from 'react-router';
 
 
+type HeaderProps =  {
+    cart: {
+        productId: string;
+        quantity: number;
+        deliveryOptionId: string;
+    }[];
+};
 
-export function Header({ cart }) {
+
+export function Header({ cart }: HeaderProps) {
 
     const [searchParams] = useSearchParams();
 
@@ -20,14 +28,17 @@ export function Header({ cart }) {
 
     const navigate = useNavigate();
 
-    const makeSearch = (event) => {
-        if (event.key == 'Enter') {
-            setSearchTerm('');
-            navigate(`/?search=${searchTerm}`);
+
+    const makeSearch = (event: React.KeyboardEvent<HTMLInputElement> | React.MouseEvent<HTMLButtonElement>) => {
+        if ('key' in event && event.key !== 'Enter') {
             return;
         }
+        if (searchTerm.trim()) {
+            navigate(`/?search=${searchTerm}`);
 
-    }
+        }
+    };
+
     return (
         <div className="header">
             <div className="left-section">
