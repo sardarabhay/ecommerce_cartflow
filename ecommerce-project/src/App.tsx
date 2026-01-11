@@ -6,6 +6,12 @@ import { CheckoutPage } from './pages/checkout/CheckoutPage.jsx';
 import { OrdersPage } from './pages/orders/OrdersPage.jsx';
 import { TrackingPage } from './pages/TrackingPage.jsx';
 
+declare global {
+  interface Window {
+    axios: typeof axios;
+  }
+}
+
 window.axios = axios;
 
 

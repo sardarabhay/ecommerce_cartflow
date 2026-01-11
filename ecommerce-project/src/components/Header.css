@@ -39,7 +39,7 @@
 }
 
 .header .logo {
-  height: 26px;
+  height: 40px;
   margin-top: 1px;
 }
 
@@ -54,7 +54,7 @@
 
   .header .mobile-logo {
     display: block;
-    height: 26px;
+    height: 40px;
     margin-top: 1px;
   }
 }

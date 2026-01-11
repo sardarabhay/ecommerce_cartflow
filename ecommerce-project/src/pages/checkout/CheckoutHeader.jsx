@@ -1,7 +1,7 @@
 import {Link} from 'react-router';
 import CheckoutLockIcon from '../../assets/images/icons/checkout-lock-icon.png';
-import Logo from '../../assets/images/logo.png';
-import MobileLogo from '../../assets/images/mobile-logo.png';
+import Logo from '../../assets/images/cartflow_full_logo_green.png';
+import MobileLogo from '../../assets/images/cartflow_full_logo_green_mobile.png';
 import { calculateTotalQuantity } from '../../utils/totalQuantity';
 import './CheckoutHeader.css';
 

@@ -1,7 +1,7 @@
 import './Header.css';
 import { NavLink } from 'react-router';
-import LogoWhite from '../assets/images/logo-white.png';
-import MobileLogoWhite from '../assets/images/mobile-logo-white.png';
+import LogoWhite from '../assets/images/cartflow_logo_white.png';
+import MobileLogoWhite from '../assets/images/cartflow_logo_white_mobile.png';
 import SearchIcon from '../assets/images/icons/search-icon.png';
 import CartIcon from '../assets/images/icons/cart-icon.png';
 import { calculateTotalQuantity } from '../utils/totalQuantity';
