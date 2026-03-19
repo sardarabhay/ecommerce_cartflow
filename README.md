@@ -6,7 +6,7 @@ A full-stack e-commerce application built with React, TypeScript, and Node.js/Ex
 
 🔗 **[View Live Application](http://ecommerce-project-env.eba-kdqziby3.eu-north-1.elasticbeanstalk.com)**
 
-> Replace the URL above with your actual deployed application link
+> Deployed with AWS
 
 ## 📋 Table of Contents
 
