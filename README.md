@@ -4,9 +4,8 @@ A full-stack e-commerce application built with React, TypeScript, and Node.js/Ex
 
 ## 🌐 Live Demo
 
-🔗 **[View Live Application](http://ecommerce-project-env.eba-kdqziby3.eu-north-1.elasticbeanstalk.com)**
+🔗 **[View Live Application](https://ecommerce-sigma-bay-70.vercel.app/)**
 
-> Deployed with AWS
 
 ## 📋 Table of Contents
 
